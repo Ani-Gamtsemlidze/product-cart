@@ -1,8 +1,8 @@
-const plus = document.getElementById("plus")
-const minus = document.getElementById("minus")
 const countElement = document.getElementById("count")
 let count = 0;
-function countBox () {
+let num = document.getElementsByClassName("cart-num")
+// countBox function is used for counting chosen items //
+function countBox () { 
     document.getElementById("plus").addEventListener("click", function() {
         if(count < 5) {
 
@@ -17,70 +17,86 @@ function countBox () {
         }
 
     })
-}
+} 
 countBox();
-function photoChange () {
-document.getElementById("img1").addEventListener("click", function(){
-        document.getElementById("main-img1").style.display = "block";
-        document.getElementById("main-img2").style.display = "none";
-        document.getElementById("main-img3").style.display = "none";
-        document.getElementById("main-img4").style.display = "none";
-        
-        
-})
-document.getElementById("img2").addEventListener("click", function(){
-        document.getElementById("main-img2").style.display = "block";
-        document.getElementById("main-img1").style.display = "none";
-        document.getElementById("main-img3").style.display = "none";
-        document.getElementById("main-img4").style.display = "none";
-        
-})
-document.getElementById("img3").addEventListener("click", function(){
-        document.getElementById("main-img3").style.display = "block";
-        document.getElementById("main-img1").style.display = "none";
-        document.getElementById("main-img2").style.display = "none";
-        document.getElementById("main-img4").style.display = "none";
+// cartBoxDisplay function is used for changing cart pop-out  //
+function cartBoxDisplay (){
+    
 
-        
-})
-document.getElementById("img4").addEventListener("click", function(){
-        document.getElementById("main-img4").style.display = "block";
-        document.getElementById("main-img1").style.display = "none";
-        document.getElementById("main-img2").style.display = "none";
-        document.getElementById("main-img3").style.display = "none";
-        
-})
-}
-photoChange();
+    document.querySelector(".cart").addEventListener("click", function(){
+        document.querySelector(".cart-box").classList.toggle("active")
 
-function photoChangeLight() {
+        if(count === 0){
+            document.querySelector(".cart-box-body").style.display="none";
+            document.querySelector(".empty-cart").style.display="block"
+        } else if (count > 0) {
+            document.querySelector(".empty-cart").style.display="none"
+            document.querySelector(".cart-box-body").style.display="block";
+            
+        }
+    })
+    }
 
-    document.getElementById("light1").addEventListener("click", function(){
-        document.getElementById("light-img1").style.display = "block";
-        document.getElementById("light-img2").style.display = "none";
-        document.getElementById("light-img3").style.display = "none";
-        document.getElementById("light-img4").style.display = "none";
-    })
-    document.getElementById("light2").addEventListener("click", function(){
-        document.getElementById("light-img2").style.display = "block";
-        document.getElementById("light-img1").style.display = "none";
-        document.getElementById("light-img3").style.display = "none";
-        document.getElementById("light-img4").style.display = "none";
-    })
-    document.getElementById("light3").addEventListener("click", function(){
-        document.getElementById("light-img3").style.display = "block";
-        document.getElementById("light-img1").style.display = "none";
-        document.getElementById("light-img2").style.display = "none";
-        document.getElementById("light-img4").style.display = "none";
-    })
-    document.getElementById("light4").addEventListener("click", function(){
-        document.getElementById("light-img4").style.display = "block";
-        document.getElementById("light-img1").style.display = "none";
-        document.getElementById("light-img2").style.display = "none";
-        document.getElementById("light-img3").style.display = "none";
+cartBoxDisplay();
+
+//     document.querySelector(".cart").addEventListener("click", function(){
+//     if(count === 0){
+        
+//             document.querySelector(".cart-box").style.display="block"
+//             document.querySelector(".cart-box-body").style.display="none"
+//     } else if (count > 0) {
+//             document.querySelector(".cart-box").style.display="block"
+//             document.querySelector(".empty-cart").style.display="none"
+        
+//              }
+//     })
+// }
+// cartBoxDisplay();
+
+
+
+let imageList = document.getElementsByClassName("image-list");
+for (let i = 0; i < imageList.length; i++) {
+    
+    
+    imageList[i].addEventListener("click", function(){
+        removeClass()
+        document.getElementsByClassName("image-list")[i].classList.add("active")
+        let imageSrc = this.getAttribute("src");
+        document.getElementById("main-img1").setAttribute("src", imageSrc)
     })
 }
-photoChangeLight();
+
+
+
+function removeClass(){
+    for (let index = 0; index < imageList.length; index++) {
+        
+        document.getElementsByClassName("image-list")[index].classList.remove("active")
+
+        
+    }
+
+}
+
+let lightPhoto = document.getElementsByClassName("light-product")
+for(let i =0; i < lightPhoto.length; i++) {
+    lightPhoto[i].addEventListener("click", function(){
+        removeLightClass()
+        document.getElementsByClassName("light-product")[i].classList.add("active")
+        let lightSrc = this.getAttribute("src");
+        document.getElementById("light-img1").setAttribute("src", lightSrc)
+    })
+}
+
+function removeLightClass(){
+    for (let i = 0; i < lightPhoto.length; i++) {
+        
+        document.getElementsByClassName("light-product")[i].classList.remove("active")
+    }
+
+}
+
 
 document.querySelector(".main-image").addEventListener("click", function(){
     document.querySelector(".light-box").style.display= "flex"
@@ -89,8 +105,12 @@ document.querySelector(".main-image").addEventListener("click", function(){
 document.querySelector(".cancel").addEventListener("click", function(){
     document.querySelector(".light-box").style.display="none"
 })
-
-
-
-
-
+document.querySelector(".light-box").addEventListener("click", function(){
+    document.querySelector(".light-box").style.display="none"
+})
+document.querySelector(".light-container").addEventListener("click", function(e){
+    e.stopPropagation()
+})
+document.querySelector(".button").addEventListener("click", function(){
+    document.querySelector(".cart-count").style.display="block"
+})
