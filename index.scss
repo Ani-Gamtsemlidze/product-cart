@@ -534,6 +534,14 @@
             margin-left: 20px;
         }
     }
+    .cart-box{
+        z-index: 1;
+        top: 11%;
+        right: 8px;
+    }
+    .empty-cart p{
+        padding: 77px;
+    }
     .optional-image{
         display: none;
     }
