@@ -35,7 +35,6 @@
   z-index: 1;
   position: absolute;
   display: none;
-  transition: all 0.5s ease;
 }
 .main-container .menu-bar {
   background-color: #FF7E1B;
@@ -301,11 +300,8 @@
   border: transparent 2px solid;
   transition: 0.5s;
 }
-.light-optional-image .light-1 .light-product:hover {
-  opacity: 0.5;
-}
 .light-optional-image .light-1 .light-product.active {
-  border-color: #FF7E1B;
+  border-color: #fff;
 }
 
 .header {
@@ -563,6 +559,13 @@
 }
 
 @media only screen and (max-width: 992px) {
+  .light-box {
+    display: none;
+    background-color: unset;
+  }
+  .light-box .light-container {
+    display: none;
+  }
   .header {
     margin: 15px;
     border-bottom: unset;
