@@ -25,6 +25,47 @@
   max-width: 1440px;
   width: 100%;
   display: flex;
+  position: relative;
+}
+.main-container .menu-bar {
+  background-color: #fff;
+  position: relative;
+  position: absolute;
+  z-index: 1;
+  max-width: 250px;
+  width: 100%;
+  min-height: 100dvh;
+  padding: 20px;
+  display: none;
+}
+.main-container .menu-bar .close-bar {
+  position: relative;
+}
+.main-container .menu-bar .close-bar svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+.main-container .menu-bar ul {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  margin-top: 40px;
+}
+.main-container .menu-bar ul li {
+  padding-top: 15px;
+}
+.main-container .menu-bar ul a {
+  font-size: 18px;
+  line-height: 26px;
+  text-decoration: none;
+  color: #1D2026;
+  font-family: "Kumbh Sans-bold";
+}
+.main-container .menu-bar ul a:hover {
+  color: #1D2026;
+  border-bottom: 4px orange solid;
 }
 .main-container .page {
   position: relative;
@@ -36,7 +77,7 @@
   background-color: #FFFFFF;
   max-width: 360px;
   position: absolute;
-  width: 360px;
+  width: 100%;
   right: 0;
   top: 15%;
   right: 56px;
@@ -63,7 +104,7 @@
   font-size: 16px;
   line-height: 26px;
   font-family: "Kumbh Sans-bold";
-  padding: 60px;
+  padding: 70px;
 }
 
 .cart-info-body {
@@ -521,7 +562,7 @@
     right: 8px;
   }
   .empty-cart p {
-    padding: 77px;
+    margin-top: 64px;
   }
   .optional-image {
     display: none;

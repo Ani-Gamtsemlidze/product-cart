@@ -21,7 +21,8 @@ function countBox () {
 countBox();
 // cartBoxDisplay function is used for changing cart pop-out  //
 function cartBoxDisplay (){
-    
+
+    // Check count at the beginning of the function
 
     document.querySelector(".cart").addEventListener("click", function(){
         document.querySelector(".cart-box").classList.toggle("active")
@@ -33,11 +34,12 @@ function cartBoxDisplay (){
             document.querySelector(".empty-cart").style.display="none"
             document.querySelector(".cart-box-body").style.display="block";
             
-        }
+        } 
     })
-    }
+}
 
 cartBoxDisplay();
+
 
 //     document.querySelector(".cart").addEventListener("click", function(){
 //     if(count === 0){
@@ -113,4 +115,33 @@ document.querySelector(".light-container").addEventListener("click", function(e)
 })
 document.querySelector(".button").addEventListener("click", function(){
     document.querySelector(".cart-count").style.display="block"
+    document.querySelector(".cart-count").innerText=count
 })
+
+document.querySelector(".cart").addEventListener("click", function(){
+    document.querySelector("strong").textContent= count
+})
+
+let onePrice = 125
+document.querySelector(".cart").addEventListener("click", function(){
+        document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
+    })
+
+
+
+    document.querySelector(".delete").addEventListener("click", function(){
+    let nums = count - 1 
+    document.querySelector("strong").textContent= nums
+    document.querySelector("#count").innerText= nums
+    document.querySelector(".cart-count").innerText= nums
+    document.querySelector(".sum-price").innerText= "$" + nums * onePrice + ".00"
+})
+
+document.querySelector(".menu-tab-mobile").addEventListener("click", function(){
+    document.querySelector(".menu-bar").style.display="block"
+})
+document.querySelector(".close-bar").addEventListener("click", function(){
+    document.querySelector(".menu-bar").style.display="none"
+})
+
+
