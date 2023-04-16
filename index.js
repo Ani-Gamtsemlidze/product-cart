@@ -22,11 +22,9 @@ countBox();
 // cartBoxDisplay function is used for changing cart pop-out  //
 function cartBoxDisplay (){
 
-    // Check count at the beginning of the function
-
     document.querySelector(".cart").addEventListener("click", function(){
         document.querySelector(".cart-box").classList.toggle("active")
-
+        
         if(count === 0){
             document.querySelector(".cart-box-body").style.display="none";
             document.querySelector(".empty-cart").style.display="block"
@@ -39,23 +37,6 @@ function cartBoxDisplay (){
 }
 
 cartBoxDisplay();
-
-
-//     document.querySelector(".cart").addEventListener("click", function(){
-//     if(count === 0){
-        
-//             document.querySelector(".cart-box").style.display="block"
-//             document.querySelector(".cart-box-body").style.display="none"
-//     } else if (count > 0) {
-//             document.querySelector(".cart-box").style.display="block"
-//             document.querySelector(".empty-cart").style.display="none"
-        
-//              }
-//     })
-// }
-// cartBoxDisplay();
-
-
 
 let imageList = document.getElementsByClassName("image-list");
 for (let i = 0; i < imageList.length; i++) {
@@ -113,6 +94,8 @@ document.querySelector(".light-box").addEventListener("click", function(){
 document.querySelector(".light-container").addEventListener("click", function(e){
     e.stopPropagation()
 })
+
+
 document.querySelector(".button").addEventListener("click", function(){
     document.querySelector(".cart-count").style.display="block"
     document.querySelector(".cart-count").innerText=count
@@ -123,19 +106,36 @@ document.querySelector(".cart").addEventListener("click", function(){
 })
 
 let onePrice = 125
+
 document.querySelector(".cart").addEventListener("click", function(){
         document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
     })
 
 
+//this code is for delete button in cart box//
 
-    document.querySelector(".delete").addEventListener("click", function(){
-    let nums = count - 1 
-    document.querySelector("strong").textContent= nums
-    document.querySelector("#count").innerText= nums
-    document.querySelector(".cart-count").innerText= nums
-    document.querySelector(".sum-price").innerText= "$" + nums * onePrice + ".00"
+document.querySelector(".delete").addEventListener("click", function(){
+    document.querySelector(".cart-box-body").style.display="none";
+    document.querySelector(".empty-cart").style.display="block"
+    document.querySelector(".cart-count").innerText= 0
+    document.querySelector("#count").innerText= 0
+    document.querySelector("strong").innerText= 0
+    document.querySelector(".sum-price").innerText=0
+    count = 0
+
 })
+
+// code of reset //
+// function restart (){
+//     document.querySelector(".delete").addEventListener("click", function(){
+//         document.querySelector("strong").setAttribute=0
+//         document.querySelector(".sum-price").i=0
+//         document.querySelector(".cart-count").innerHTML=0
+//         document.querySelector("#count").innerHTML=0
+//     })
+// }
+// restart();
+
 
 document.querySelector(".menu-tab-mobile").addEventListener("click", function(){
     setTimeout(function(){
@@ -151,6 +151,28 @@ document.querySelector(".close-bar").addEventListener("click", function(){
 document.querySelector(".background-shade-mobile").addEventListener("click", function(){
     document.querySelector(".menu-bar").style.display="none"
     document.querySelector(".background-shade-mobile").style.display="none"
+})
+
+// in this code strong and cart-count is equals while cliking in a plus sign//
+document.querySelector("#plus").addEventListener("click", function(){
+    document.querySelector(".cart-count").innerText= count
+    document.querySelector("strong").innerText= count 
+})
+// in this code strong and cart-count is equals while cliking in a minus sign//
+document.querySelector("#minus").addEventListener("click", function(){
+    document.querySelector(".cart-count").innerText= count
+    document.querySelector("strong").innerText= count 
+})
+
+document.querySelector(".count-box").addEventListener("click", function() {
+    if(count == 0) {
+        document.querySelector(".cart-box-body").style.display="none";
+        document.querySelector(".empty-cart").style.display="block"
+    } else if (count > 0) {
+        document.querySelector(".cart-box-body").style.display="block";
+        document.querySelector(".empty-cart").style.display="none"
+    }
+    document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
 })
 
 

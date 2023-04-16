@@ -528,6 +528,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+  width: 100%;
+  max-width: 157px;
 }
 .button-box .count-box img {
   margin: 0 15px;
