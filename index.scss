@@ -28,6 +28,16 @@
     width: 100%;
     display: flex;
     position: relative;
+    .background-shade-mobile{
+        max-width: 1440px;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
+       position: absolute;
+       display: none;
+       transition: all 0.5s ease;
+    }
     .menu-bar{
         background-color: #FF7E1B;;
         position: relative;
@@ -38,6 +48,7 @@
         height: 100%;
         min-height: 100dvh;
         padding: 20px ;
+        transition: all 0.5s ease;
         display: none;
         .close-bar{
             position: relative;
@@ -579,6 +590,8 @@
     }
 }
 @media only screen and (max-width: 992px) {
+
+
     .header{
         margin: 15px;
         border-bottom: unset;

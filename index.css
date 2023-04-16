@@ -27,6 +27,16 @@
   display: flex;
   position: relative;
 }
+.main-container .background-shade-mobile {
+  max-width: 1440px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  position: absolute;
+  display: none;
+  transition: all 0.5s ease;
+}
 .main-container .menu-bar {
   background-color: #FF7E1B;
   position: relative;
@@ -37,6 +47,7 @@
   height: 100%;
   min-height: 100dvh;
   padding: 20px;
+  transition: all 0.5s ease;
   display: none;
 }
 .main-container .menu-bar .close-bar {

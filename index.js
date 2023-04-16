@@ -138,10 +138,19 @@ document.querySelector(".cart").addEventListener("click", function(){
 })
 
 document.querySelector(".menu-tab-mobile").addEventListener("click", function(){
-    document.querySelector(".menu-bar").style.display="block"
+    setTimeout(function(){
+
+        document.querySelector(".menu-bar").style.display="block"
+        document.querySelector(".background-shade-mobile").style.display="block"
+    }, 500 )
 })
 document.querySelector(".close-bar").addEventListener("click", function(){
     document.querySelector(".menu-bar").style.display="none"
+    document.querySelector(".background-shade-mobile").style.display="none"
+}) 
+document.querySelector(".background-shade-mobile").addEventListener("click", function(){
+    document.querySelector(".menu-bar").style.display="none"
+    document.querySelector(".background-shade-mobile").style.display="none"
 })
 
 
