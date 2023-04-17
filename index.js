@@ -35,14 +35,13 @@ function cartBoxDisplay (){
             
         } 
     }
-document.querySelector(".button").addEventListener("click", function(){
-    cartBoxDisplay();
-})
 
 document.querySelector(".cart").addEventListener("click", function(){
     cartBoxDisplay();
 
 })
+
+
 
 // this code is used for images-display on desktop//
 let imageList = document.getElementsByClassName("image-list");
@@ -158,10 +157,16 @@ document.querySelector(".cart").addEventListener("click", function(){
 document.querySelector(".delete").addEventListener("click", function(){
     document.querySelector(".cart-box-body").style.display="none";
     document.querySelector(".empty-cart").style.display="block"
+    document.querySelector(".cart-count").style.display="none"
+    document.querySelector("#plus").addEventListener("click", function(){
+        document.querySelector(".cart-count").style.display="block"
+    })
     count = 0
+
     restart();
 
 })
+
 
 //code of restart //
 function restart (){
