@@ -1,6 +1,5 @@
 const countElement = document.getElementById("count")
 let count = 0;
-let num = document.getElementsByClassName("cart-num")
 // countBox function is used for counting chosen items //
 function countBox () { 
     document.getElementById("plus").addEventListener("click", function() {
@@ -19,11 +18,13 @@ function countBox () {
     })
 } 
 countBox();
-// cartBoxDisplay function is used for changing cart pop-out  //
+// cartBoxDisplay function is used for changing cart-boxes while clicking button  //
 function cartBoxDisplay (){
 
-    document.querySelector(".cart").addEventListener("click", function(){
+    document.querySelector(".button").addEventListener("click", function(){
+    
         document.querySelector(".cart-box").classList.toggle("active")
+       
         
         if(count === 0){
             document.querySelector(".cart-box-body").style.display="none";
@@ -38,6 +39,7 @@ function cartBoxDisplay (){
 
 cartBoxDisplay();
 
+// this code is used for images-display on desktop//
 let imageList = document.getElementsByClassName("image-list");
 for (let i = 0; i < imageList.length; i++) {
     
@@ -50,8 +52,41 @@ for (let i = 0; i < imageList.length; i++) {
     })
 }
 
+// this code is used for images slider in light-box //
+
+let lightProducts = document.querySelectorAll(".light-product");
+let nextClick = document.querySelector(".next");
+let currentIndex = 0;
+
+nextClick.addEventListener("click", function() {
+  let nextSrc = lightProducts[currentIndex].getAttribute("src");
+  document.querySelector(".light-img1").setAttribute("src", nextSrc);
+
+  currentIndex++;
+  if (currentIndex >= lightProducts.length) {
+    currentIndex = 0;
+  }
+});
+
+    document.querySelector(".previous").addEventListener("click", function(){
+        let previousSrc = lightProducts[currentIndex].getAttribute("src");
+        document.querySelector(".light-img1").setAttribute("src", previousSrc);
+        currentIndex--;
+    })
+
+// nextClick.addEventListener("click", function() {
+//   let nextSrc = lightProducts[currentIndex].getAttribute("src");
+//   document.querySelector(".light-img1").setAttribute("src", nextSrc);
+
+//   currentIndex++;
+//   if (currentIndex >= lightProducts.length) {
+//     currentIndex = 0;
+//   }
+// });
 
 
+
+// remove class in images //
 function removeClass(){
     for (let index = 0; index < imageList.length; index++) {
         
@@ -62,13 +97,14 @@ function removeClass(){
 
 }
 
+// code fore light box- photos//
 let lightPhoto = document.getElementsByClassName("light-product")
 for(let i =0; i < lightPhoto.length; i++) {
     lightPhoto[i].addEventListener("click", function(){
         removeLightClass()
         document.getElementsByClassName("light-product")[i].classList.add("active")
         let lightSrc = this.getAttribute("src");
-        document.getElementById("light-img1").setAttribute("src", lightSrc)
+        document.querySelector(".light-img1").setAttribute("src", lightSrc)
     })
 }
 
@@ -112,29 +148,26 @@ document.querySelector(".cart").addEventListener("click", function(){
     })
 
 
-//this code is for delete button in cart box//
+//this code is for delete-button in cart box//
 
 document.querySelector(".delete").addEventListener("click", function(){
     document.querySelector(".cart-box-body").style.display="none";
     document.querySelector(".empty-cart").style.display="block"
-    document.querySelector(".cart-count").innerText= 0
-    document.querySelector("#count").innerText= 0
-    document.querySelector("strong").innerText= 0
-    document.querySelector(".sum-price").innerText=0
     count = 0
+    restart();
 
 })
 
-// code of reset //
-// function restart (){
-//     document.querySelector(".delete").addEventListener("click", function(){
-//         document.querySelector("strong").setAttribute=0
-//         document.querySelector(".sum-price").i=0
-//         document.querySelector(".cart-count").innerHTML=0
-//         document.querySelector("#count").innerHTML=0
-//     })
-// }
-// restart();
+//code of restart //
+function restart (){
+    document.querySelector(".delete").addEventListener("click", function(){
+        document.querySelector(".cart-count").innerText= 0
+        document.querySelector("#count").innerText= 0
+        document.querySelector("strong").innerText= 0
+        document.querySelector(".sum-price").innerText=0
+    })
+}
+restart();
 
 
 document.querySelector(".menu-tab-mobile").addEventListener("click", function(){
@@ -174,5 +207,7 @@ document.querySelector(".count-box").addEventListener("click", function() {
     }
     document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
 })
+
+
 
 
