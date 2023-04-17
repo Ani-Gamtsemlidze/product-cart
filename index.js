@@ -19,11 +19,11 @@ function countBox () {
 } 
 countBox();
 // cartBoxDisplay function is used for changing cart-boxes while clicking button  //
-function cartBoxDisplay (){
 
-    document.querySelector(".button").addEventListener("click", function(){
+
+function cartBoxDisplay (){
     
-        document.querySelector(".cart-box").classList.toggle("active")
+    document.querySelector(".cart-box").classList.toggle("active")
        
         
         if(count === 0){
@@ -34,10 +34,15 @@ function cartBoxDisplay (){
             document.querySelector(".cart-box-body").style.display="block";
             
         } 
-    })
-}
+    }
+document.querySelector(".button").addEventListener("click", function(){
+    cartBoxDisplay();
+})
 
-cartBoxDisplay();
+document.querySelector(".cart").addEventListener("click", function(){
+    cartBoxDisplay();
+
+})
 
 // this code is used for images-display on desktop//
 let imageList = document.getElementsByClassName("image-list");
@@ -207,7 +212,6 @@ document.querySelector(".count-box").addEventListener("click", function() {
     }
     document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
 })
-
 
 
 

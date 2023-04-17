@@ -505,10 +505,23 @@
   border-radius: 10px;
   width: 100%;
   max-width: 157px;
+  position: relative;
 }
-.button-box .count-box img {
+.button-box .count-box #plus {
+  position: absolute;
   margin: 0 15px;
   cursor: pointer;
+  width: 12px;
+  position: absolute;
+  right: 0;
+}
+.button-box .count-box #minus {
+  position: absolute;
+  margin: 0 15px;
+  cursor: pointer;
+  width: 12px;
+  position: absolute;
+  left: 0;
 }
 .button-box .count-box span {
   font-family: "Kumbh Sans-bold";
