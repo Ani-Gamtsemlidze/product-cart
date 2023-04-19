@@ -36,10 +36,23 @@ function cartBoxDisplay (){
         } 
     }
 
-document.querySelector(".cart").addEventListener("click", function(){
+document.querySelector(".cart").addEventListener("click", function(e){
+    e.stopPropagation()
     cartBoxDisplay();
 
 })
+
+document.querySelector(".cart-box").addEventListener("click", function(e){
+    e.stopPropagation()
+})
+document.querySelector(".count-box").addEventListener("click", function(e){
+    e.stopPropagation()
+})
+
+window.addEventListener("click", function(){
+    document.querySelector(".cart-box").classList.remove("active")
+})
+
 
 
 
@@ -63,20 +76,40 @@ let nextClick = document.querySelector(".next");
 let currentIndex = 0;
 
 nextClick.addEventListener("click", function() {
-  let nextSrc = lightProducts[currentIndex].getAttribute("src");
-  document.querySelector(".light-img1").setAttribute("src", nextSrc);
+    currentIndex++;
+    let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
 
-  currentIndex++;
-  if (currentIndex >= lightProducts.length) {
-    currentIndex = 0;
-  }
+    deleteActive()
+    lightProducts[currentIndex].classList.add("active")
+
+    document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
+    if(currentIndex >= lightProducts.length - 1) {
+        currentIndex = -1 ;
+    }
 });
 
-    document.querySelector(".previous").addEventListener("click", function(){
-        let previousSrc = lightProducts[currentIndex].getAttribute("src");
-        document.querySelector(".light-img1").setAttribute("src", previousSrc);
-        currentIndex--;
-    })
+function deleteActive(){
+    
+for (let index = 0; index < lightProducts.length; index++) {
+        
+    document.getElementsByClassName("light-product")[index].classList.remove("active")
+  
+}
+}
+
+document.querySelector(".previous").addEventListener("click", function(){
+    currentIndex --;
+    if(currentIndex < 0) {
+        currentIndex = lightProducts.length - 1
+    }
+    deleteActive()
+    lightProducts[currentIndex].classList.add("active")
+    
+    
+    let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
+    document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
+    
+})
 
 // nextClick.addEventListener("click", function() {
 //   let nextSrc = lightProducts[currentIndex].getAttribute("src");
@@ -106,6 +139,7 @@ let lightPhoto = document.getElementsByClassName("light-product")
 for(let i =0; i < lightPhoto.length; i++) {
     lightPhoto[i].addEventListener("click", function(){
         removeLightClass()
+        currentIndex = i
         document.getElementsByClassName("light-product")[i].classList.add("active")
         let lightSrc = this.getAttribute("src");
         document.querySelector(".light-img1").setAttribute("src", lightSrc)
@@ -139,6 +173,9 @@ document.querySelector(".light-container").addEventListener("click", function(e)
 document.querySelector(".button").addEventListener("click", function(){
     document.querySelector(".cart-count").style.display="block"
     document.querySelector(".cart-count").innerText=count
+    if(count == 0){
+        document.querySelector(".cart-count").style.display="none"
+    }
 })
 
 document.querySelector(".cart").addEventListener("click", function(){
@@ -205,6 +242,10 @@ document.querySelector("#plus").addEventListener("click", function(){
 document.querySelector("#minus").addEventListener("click", function(){
     document.querySelector(".cart-count").innerText= count
     document.querySelector("strong").innerText= count 
+    if(count == 0){
+        document.querySelector(".cart-count").style.display="none"
+    }
+    
 })
 
 document.querySelector(".count-box").addEventListener("click", function() {
