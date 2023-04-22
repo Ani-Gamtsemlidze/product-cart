@@ -212,6 +212,8 @@ function restart (){
         document.querySelector("#count").innerText= 0
         document.querySelector("strong").innerText= 0
         document.querySelector(".sum-price").innerText=0
+        // document.querySelector(".cart-box").style.display="none";
+
     })
 }
 restart();
@@ -258,6 +260,55 @@ document.querySelector(".count-box").addEventListener("click", function() {
     }
     document.querySelector(".sum-price").innerText= "$" + count * onePrice + ".00"
 })
+
+//mobile images slider//
+
+const nextMobile = document.querySelector(".next-mobile");
+// let mainImage = document.querySelector(".main-desktop-image");
+let slideImage = document.getElementsByClassName("mobile-product");
+let countIndex = 0
+
+
+nextMobile.addEventListener("click", function(){
+    countIndex ++;
+    let mobileSrc= slideImage[countIndex].getAttribute("src")
+    document.querySelector(".main-desktop-image").setAttribute("src", mobileSrc)   
+    if(countIndex >= slideImage.length -1) {
+        countIndex = -1
+    }
+})
+
+const previousMobile = document.querySelector(".previous-mobile");
+
+previousMobile.addEventListener("click", function(){
+    countIndex --;
+    if(countIndex < 0) {
+        countIndex = slideImage.length - 1
+    }
+    let mobileSrc= slideImage[countIndex].getAttribute("src")
+    document.querySelector(".main-desktop-image").setAttribute("src", mobileSrc)   
+})
+
+
+
+// let lightProducts = document.querySelectorAll(".light-product");
+// let nextClick = document.querySelector(".next");
+// let currentIndex = 0;
+
+// nextClick.addEventListener("click", function() {
+//     currentIndex++;
+//     let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
+
+//     deleteActive()
+//     lightProducts[currentIndex].classList.add("active")
+
+//     document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
+//     if(currentIndex >= lightProducts.length - 1) {
+//         currentIndex = -1 ;
+//     }
+// });
+
+
 
 
 
