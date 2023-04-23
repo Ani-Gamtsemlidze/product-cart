@@ -608,7 +608,7 @@
 @media only screen and (max-width: 992px) {
 
     .light-box{
-        display: unset;
+        display: none !important;
         background-color: unset;
         .light-container{
 
@@ -617,7 +617,7 @@
     }
     .header{
         margin: 15px;
-        border-bottom: unset;
+        border-bottom: none;
         .menu-tab-mobile{
             display: block;
             margin-left: 20px;

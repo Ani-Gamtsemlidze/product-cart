@@ -290,24 +290,31 @@ previousMobile.addEventListener("click", function(){
 })
 
 
-
-// let lightProducts = document.querySelectorAll(".light-product");
-// let nextClick = document.querySelector(".next");
-// let currentIndex = 0;
-
-// nextClick.addEventListener("click", function() {
-//     currentIndex++;
-//     let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
-
-//     deleteActive()
-//     lightProducts[currentIndex].classList.add("active")
-
-//     document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
-//     if(currentIndex >= lightProducts.length - 1) {
-//         currentIndex = -1 ;
+// document.addEventListener("keydown", function(event) {
+//     if (event.key == "ArrowRight"){
+//         currentIndex++;
+//         let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
+    
+//         deleteActive()
+//         lightProducts[currentIndex].classList.add("active")
+    
+//         document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
+//         if(currentIndex >= lightProducts.length - 1) {
+//             currentIndex = -1 ;
+//         }
+//     } else if (event.key == "ArrowLeft"){
+//         currentIndex --;
+//         if(currentIndex < 0) {
+//             currentIndex = lightProducts.length - 1
+//         }
+//         deleteActive()
+//         lightProducts[currentIndex].classList.add("active")
+        
+        
+//         let lightPhotoSrc = lightProducts[currentIndex].getAttribute("src");
+//         document.querySelector(".light-img1").setAttribute("src", lightPhotoSrc)
 //     }
-// });
-
+// })
 
 
 
