@@ -37,7 +37,7 @@
   display: none;
 }
 .main-container .menu-bar {
-  background-color: #FF7E1B;
+  background-color: #ff7e1b;
   position: relative;
   position: absolute;
   z-index: 1;
@@ -78,7 +78,7 @@
   font-family: "Kumbh Sans-bold";
 }
 .main-container .menu-bar ul a:hover {
-  color: #1D2026;
+  color: #1d2026;
   border-bottom: 4px orange solid;
 }
 .main-container .page {
@@ -88,7 +88,7 @@
 }
 
 .cart-box {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   max-width: 360px;
   position: absolute;
   width: 100%;
@@ -102,8 +102,8 @@
   display: block;
 }
 .cart-box span {
-  color: #1D2026;
-  border-bottom: 1px #E4E9F2 solid;
+  color: #1d2026;
+  border-bottom: 1px #e4e9f2 solid;
   font-size: 16px;
   line-height: 20px;
   font-family: "Kumbh Sans-bold";
@@ -113,7 +113,7 @@
 
 .empty-cart p {
   text-align: center;
-  color: #69707D;
+  color: #69707d;
   font-size: 16px;
   line-height: 26px;
   font-family: "Kumbh Sans-bold";
@@ -137,7 +137,7 @@
 .text-cart-box p {
   font-size: 16px;
   line-height: 26px;
-  color: #69707D;
+  color: #69707d;
   font-family: "Kumbh Sans";
 }
 .text-cart-box .span-price {
@@ -145,13 +145,13 @@
 }
 .text-cart-box .span-price .one-price {
   font-size: 16px;
-  color: #69707D;
+  color: #69707d;
   border: none;
   padding: 0;
   font-family: "Kumbh Sans";
 }
 .text-cart-box .span-price .sum-price {
-  color: #1D2026;
+  color: #1d2026;
   font-size: 16px;
   border: none;
   padding: 0;
@@ -169,7 +169,7 @@
 }
 .button-cart button {
   border: none;
-  background-color: #FF7E1B;
+  background-color: #ff7e1b;
   max-width: 312px;
   width: 100%;
   height: 56px;
@@ -204,7 +204,7 @@
   cursor: pointer;
 }
 .light-container .cancel path:hover {
-  fill: #FF7E1B;
+  fill: #ff7e1b;
   transition: 0.5s;
 }
 .light-container .light-image {
@@ -235,7 +235,7 @@
   cursor: pointer;
 }
 .previous path:hover {
-  stroke: #FF7E1B;
+  stroke: #ff7e1b;
   transition: 0.3s;
 }
 
@@ -253,7 +253,7 @@
   cursor: pointer;
 }
 .next path:hover {
-  stroke: #FF7E1B;
+  stroke: #ff7e1b;
   transition: 0.3s;
 }
 
@@ -283,7 +283,7 @@
   display: flex;
   margin: 40px 40px;
   align-items: center;
-  border-bottom: 1px solid #E4E9F2;
+  border-bottom: 1px solid #e4e9f2;
   justify-content: space-between;
 }
 .header .menu-tab-mobile {
@@ -306,11 +306,11 @@
 }
 .nav-bar ul a {
   text-decoration: none;
-  color: #69707D;
+  color: #69707d;
   padding: 10px;
 }
 .nav-bar ul a:hover {
-  color: #1D2026;
+  color: #1d2026;
   border-bottom: 4px orange solid;
 }
 
@@ -323,7 +323,7 @@
   position: relative;
 }
 .cart-part .cart-count {
-  background-color: #FF7E1B;
+  background-color: #ff7e1b;
   position: absolute;
   width: 19px;
   height: 13px;
@@ -348,7 +348,7 @@
   transition: 0.4s;
 }
 .cart-part .avatar img:hover {
-  border: #FF7E1B 2px solid;
+  border: #ff7e1b 2px solid;
   border-radius: 50px 50px;
 }
 
@@ -391,7 +391,7 @@
   cursor: pointer;
 }
 .main-image .previous-mobile path:hover {
-  stroke: #FF7E1B;
+  stroke: #ff7e1b;
   transition: 0.3s;
 }
 .main-image .next-mobile {
@@ -408,7 +408,7 @@
   cursor: pointer;
 }
 .main-image .next-mobile path:hover {
-  stroke: #FF7E1B;
+  stroke: #ff7e1b;
   transition: 0.3s;
 }
 
@@ -449,7 +449,7 @@
   opacity: 0.5;
 }
 .optional-image .image1 .image-list.active {
-  border-color: #FF7E1B;
+  border-color: #ff7e1b;
 }
 
 .info-container {
@@ -459,7 +459,7 @@
 }
 .info-container .text-part span {
   margin-top: 27px;
-  color: #FF7E1B;
+  color: #ff7e1b;
   font-size: 13px;
   line-height: 16px;
   font-family: "Kumbh Sans-bold";
@@ -467,7 +467,7 @@
 }
 .info-container .text-part h1 {
   margin-top: 27px;
-  color: #1D2026;
+  color: #1d2026;
   font-family: "Kumbh Sans-bold";
   text-transform: capitalize;
   font-size: 28px;
@@ -475,7 +475,7 @@
 }
 .info-container .text-part p {
   margin-top: 32px;
-  color: #69707D;
+  color: #69707d;
   font-size: 16px;
   line-height: 26px;
   text-transform: none;
@@ -490,7 +490,7 @@
   margin-bottom: 10px;
 }
 .price .sale-tag span {
-  color: #1D2026;
+  color: #1d2026;
   font-size: 28px;
   line-height: 34px;
   font-family: "Kumbh Sans-bold";
@@ -498,8 +498,8 @@
 .price .sale-tag .sale {
   margin-left: 15px;
   border-radius: 6px;
-  background-color: #FFEEE2;
-  color: #FF7E1B;
+  background-color: #ffeee2;
+  color: #ff7e1b;
   font-size: 16px;
   text-align: center;
   padding: 3px 8px;
@@ -507,7 +507,7 @@
 }
 .price .old-price {
   font-size: 16px;
-  color: #B6BCC8;
+  color: #b6bcc8;
   font-family: "Kumbh Sans-bold";
   text-decoration: line-through;
 }
@@ -520,7 +520,7 @@
 }
 .button-box .count-box {
   padding: 20px 0px;
-  background-color: #F6F8FD;
+  background-color: #f6f8fd;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -555,8 +555,8 @@
   line-height: 19px;
   padding: 17px 70px;
   border-radius: 10px;
-  color: #FFFFFF;
-  background-color: #FF7E1B;
+  color: #ffffff;
+  background-color: #ff7e1b;
   border: none;
   text-decoration: none;
   cursor: pointer;
@@ -564,7 +564,7 @@
   transition: 0.4s;
 }
 .button-box button:hover {
-  background-color: #FFAB6A;
+  background-color: #ffab6a;
 }
 .button-box button svg {
   margin-right: 15px;
@@ -652,6 +652,6 @@
     max-width: 327px;
     width: 100%;
     margin-left: unset;
-    box-shadow: 0px 20px 50px -20px #FF7E1B;
+    box-shadow: 0px 20px 50px -20px #ff7e1b;
   }
 }/*# sourceMappingURL=index.css.map */
